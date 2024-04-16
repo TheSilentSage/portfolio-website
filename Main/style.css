@@ -32,8 +32,8 @@ nav {
 .home-section {
     width: fit-content;
     position: relative;
-    top: 25%;
-    left: 34%;
+    top: 174px;
+    left: 35%;
 }
 
 
@@ -63,10 +63,14 @@ nav {
 
 
 section{
+    display: flex;
+    flex-direction: column;
     border: solid white 2px;
-    height: 100vh;
-    margin-left: 84px;
-    margin-right: 84px;
+    min-height: 100vh;
+    padding-top: 120px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 120px;
     font-size: 32px;
 }
 
@@ -80,6 +84,9 @@ section{
 }
 
 .content {
+    border: #0FF0FF solid 2px;
+    display: flex;
+    flex-direction: column;
     color: #ADADAD;
 }
 
