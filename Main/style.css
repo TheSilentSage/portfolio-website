@@ -4,6 +4,7 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 nav a{
@@ -35,11 +36,12 @@ nav {
 
 
 #home{
-    margin-top: 0px;
+    margin: 0px;
     min-height: 94.5vh;
     position: relative;
     flex-direction: row;
-    overflow: hidden
+    overflow: hidden;
+    opacity: 1;
 }
 
 
@@ -51,6 +53,7 @@ nav {
     position: absolute;
     bottom: 0;
 }
+
 
 .home-text-section {
     width: fit-content;
@@ -85,22 +88,22 @@ nav {
 }
 
 
-.grad-circle-blue,
-.grad-circle-pink{
-    border: white solid 3px;
+#grad-circle-blue,
+#grad-circle-pink{
     position: absolute;
     width: 626px;
     height: 626px;
     border-radius: 100%;
+    opacity: 0;
     filter: blur(260px);
 }
-.grad-circle-blue{
+#grad-circle-blue{
     bottom: -40%;
     right: 10% ;
     background: radial-gradient(circle, #0FF0FF,#0FF0FF);
 }
 
-.grad-circle-pink{
+#grad-circle-pink{
     bottom: -10%;
     right: -15% ;
     background: radial-gradient(circle, #FF2079,#FF2079);
@@ -114,6 +117,7 @@ section{
     margin-right: 16px;
     margin-top: 120px;
     font-size: 32px;
+    opacity: 0;
 }
 
 .title {
@@ -183,3 +187,69 @@ section{
 }
 
 
+/*Animation Css*/
+
+#about.active,
+#projects.active,
+#skills.active{
+    animation:  fadeIn forwards ;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-duration: 2s;
+}
+
+
+#about.inactive,
+#projects.inactive,
+#skills.inactive{
+    animation:  fadeOut forwards ;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-duration: 2s;
+}
+
+#home.active > *:not(#grad-circle-blue):not(#grad-circle-pink){
+    animation:  fadeIn linear forwards ;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-duration: 2s;
+    animation-delay: 0.1s;
+}
+
+#home.active #grad-circle-blue,
+#home.active #grad-circle-pink{
+    animation:  slideIn forwards ;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+    from{
+        scale: 0.7;
+        opacity: 0;
+    }
+    to {
+        scale: 1;
+        opacity: 1; 
+    }
+}
+
+
+@keyframes fadeOut {
+    from{
+        scale: 1;
+        opacity: 1; 
+    }
+    to {
+        scale: 0.7;
+        opacity: 0; 
+    }
+}
+
+@keyframes slideIn{
+    from{
+        opacity: 1;
+        bottom: -140%;
+        right: 10% ;
+    }
+    to{
+        opacity: 1;
+    }
+}
