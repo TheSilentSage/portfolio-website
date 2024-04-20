@@ -1,6 +1,5 @@
 html,
 body {
-    height: 100%;
     background-color: #030303;
     color: white;
     margin: 0;
@@ -14,6 +13,7 @@ nav a{
 }
 
 nav {
+    height: 8vh;
     display: flex;
     width: 100%;
     position: fixed;
@@ -29,30 +29,48 @@ nav {
     align-items: center;
 }
 
-#home,
 #skills{
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
-.home-section {
+
+#home{
+    margin-top: 0px;
+    min-height: 94.5vh;
+    position: relative;
+    flex-direction: row;
+    overflow: hidden
+}
+
+
+#hero-image{
+    background-color: #030303;
+    width: 46.5vw;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.home-text-section {
     width: fit-content;
     position: relative;
-    top: 174px;
-    left: 35%;
+    top: 30vh;
+    left: 55%;
 }
 
 
-.home-section p,
-.home-section #name{
+.home-text-section p,
+.home-text-section #name{
     display: inline;
     font-size: 60px;
 }
 
-.home-section p {
+.home-text-section p {
     color: #979797;
 }
 
-.home-section #name {
+.home-text-section #name {
     margin-left: 24px;
     background-image: radial-gradient(ellipse at 58px 90px, #FF0066 20%, #0FF0FF 92%);
     ;
@@ -62,10 +80,31 @@ nav {
 }
 
 
-.home-section span{
+.home-text-section span{
     font-size: 48px;
 }
 
+
+.grad-circle-blue,
+.grad-circle-pink{
+    border: white solid 3px;
+    position: absolute;
+    width: 626px;
+    height: 626px;
+    border-radius: 100%;
+    filter: blur(260px);
+}
+.grad-circle-blue{
+    bottom: -40%;
+    right: 10% ;
+    background: radial-gradient(circle, #0FF0FF,#0FF0FF);
+}
+
+.grad-circle-pink{
+    bottom: -10%;
+    right: -15% ;
+    background: radial-gradient(circle, #FF2079,#FF2079);
+}
 
 section{
     display: flex;
