@@ -175,6 +175,11 @@ section{
     row-gap: 48px;
 }
 
+
+.skills-container{
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
 .project-item {
     margin: 16px;
     padding: 16px;
