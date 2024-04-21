@@ -197,9 +197,9 @@ section{
 #about.active,
 #projects.active,
 #skills.active{
-    animation:  fadeIn forwards ;
+    animation:  fadeIn both ;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-delay: 0.2s;
 }
 
@@ -207,24 +207,32 @@ section{
 #about.inactive,
 #projects.inactive,
 #skills.inactive{
-    animation:  fadeOut forwards ;
+    animation:  fadeOut both ;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     animation-duration: 1s;
 }
 
 #home.active > *:not(#grad-circle-blue):not(#grad-circle-pink){
-    animation:  fadeIn linear forwards ;
+    animation:  fadeIn both ;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     animation-duration: 2s;
     animation-delay: 0.1s;
 }
 
-#home.active #grad-circle-blue,
-#home.active #grad-circle-pink{
-    animation:  slideIn forwards ;
-    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    animation-duration: 2s;
+#home.active #grad-circle-blue{
+    animation:  
+    slideIn 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards,
+    liveGradBlue 12s ease-in infinite both;
+    
 }
+
+#home.active #grad-circle-pink{
+    animation:  
+    slideIn 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards,
+    liveGradPink 12s ease-in infinite both;
+    
+}
+
 
 @keyframes fadeIn {
     from{
@@ -251,11 +259,85 @@ section{
 
 @keyframes slideIn{
     from{
-        opacity: 1;
         bottom: -140%;
         right: 10% ;
     }
     to{
         opacity: 1;
+    }
+}
+
+
+
+@keyframes liveGradBlue{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        bottom: -50%;
+    }
+
+    35%{
+        right: 15%;
+    }
+
+    50%{
+        bottom: -30%
+    }
+
+    60%{
+        right: 5%;
+    }
+
+    75%{
+        bottom: -20%
+    }
+
+    85%{
+        right: 0%;
+    }
+
+    100%{
+        opacity: 1;
+        bottom: -40%;
+        right: 10%;
+    }
+}
+
+
+
+@keyframes liveGradPink{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        bottom: -20%;
+    }
+    
+    35%{
+        right: -25% ;
+    }
+
+    50%{
+        bottom: -30%
+        
+    }
+
+    60%{
+        right: -10%;
+    }
+
+    75%{
+        bottom: -10%
+    }
+
+    85%{
+        right: 0%;
+    }
+
+    100%{
+        opacity: 1;
+        bottom: -10%;
+        right: -15% ;
     }
 }
