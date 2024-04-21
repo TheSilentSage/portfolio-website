@@ -199,7 +199,8 @@ section{
 #skills.active{
     animation:  fadeIn forwards ;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    animation-duration: 2s;
+    animation-duration: 1.5s;
+    animation-delay: 0.2s;
 }
 
 
@@ -208,7 +209,7 @@ section{
 #skills.inactive{
     animation:  fadeOut forwards ;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 
 #home.active > *:not(#grad-circle-blue):not(#grad-circle-pink){
@@ -243,7 +244,7 @@ section{
         opacity: 1; 
     }
     to {
-        scale: 0.7;
+        scale: none;
         opacity: 0; 
     }
 }
